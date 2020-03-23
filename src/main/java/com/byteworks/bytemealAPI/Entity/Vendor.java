@@ -1,0 +1,66 @@
+package com.byteworks.bytemealAPI.Entity;
+
+import java.util.List;
+
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+
+
+
+@Entity
+public class Vendor {
+
+  @Id
+  @GeneratedValue(strategy = GenerationType.AUTO)
+  private long id;
+
+  private String name;
+  private String phone;
+/*
+ Vendor has a one to many relationship with foodMenu
+ Vendor has a oneToOne relationship with Location
+*/
+
+  @OneToOne
+  @JoinColumn(name = "location_id")
+  private Location location;
+
+  @OneToMany(mappedBy = "vendor")
+  private List<FoodMenu> menu;
+  
+
+
+  public Location getLocation() {
+    return location;
+  }
+  public void setLocation(Location location) {
+    this.location = location;
+  }
+
+
+  public String getName() {
+    return name;
+  }
+
+  public String getPhone() {
+    return phone;
+  }
+
+  public void setPhone(String phone) {
+    this.phone = phone;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+  
+
+ 
+}
