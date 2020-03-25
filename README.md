@@ -32,7 +32,7 @@ if you have not, follow this link  https://www.oracle.com/java/technologies/gets
 
 ```
 **4. You will accessing secured resources so make sure to register and aquire token**
-# registers a new developer
+
 curl -H "Content-Type: application/json" -X POST -d '{
     "username": "yourUsername",
     "password": "yourPassword"
@@ -41,11 +41,7 @@ curl -H "Content-Type: application/json" -X POST -d '{
 }' http://localhost:8080/api/v1/developer/register
  -
 
-```bash
- 
- ./mvnw spring-boot:run
 
-```
 
 The app will start running at <http://localhost:8080>.
 
