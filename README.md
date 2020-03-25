@@ -17,10 +17,11 @@ A RESTFUL API that allow developers to order for food from a vendor, . The core 
 https://github.com/ideal-it-solutions/bytemealAPI.git
 ```
 
-**2. Setup your java development environment**
+**2. Requirements**
 
 ```bash
-create database user_database
+Your are required to have setep your java development environment.
+if you have not, follow this link  https://www.oracle.com/java/technologies/getstarted-setup-java-programming.html for installation details.
 ```
 
 **3. Build and run the app using maven**
@@ -31,7 +32,21 @@ create database user_database
  ./mvnw spring-boot:run
 
 ```
+**4. You will accessing secured resources so make sure to register and aquire token**
+# registers a new developer
+curl -H "Content-Type: application/json" -X POST -d '{
+    "username": "yourUsername",
+    "password": "yourPassword"
+    "firstName": "Yourfirstname",
+    "lastName": "Yourlastname",
+}' http://localhost:8080/api/v1/developer/register
+ -
 
+```bash
+ 
+ ./mvnw spring-boot:run
+
+```
 
 The app will start running at <http://localhost:8080>.
 
