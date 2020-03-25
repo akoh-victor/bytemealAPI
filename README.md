@@ -33,14 +33,15 @@ if you have not, follow this link  https://www.oracle.com/java/technologies/gets
 ```
 **4. You will accessing secured resources so make sure to register and aquire token**
 
+```bash
 curl -H "Content-Type: application/json" -X POST -d '{
     "username": "yourUsername",
     "password": "yourPassword"
     "firstName": "Yourfirstname",
     "lastName": "Yourlastname",
-}' http://localhost:8080/api/v1/developer/register
- -
+}' http://localhost:8080/api/v1/developer/register -
 
+```
 
 
 The app will start running at <http://localhost:8080>.
