@@ -2,6 +2,7 @@ package com.byteworks.bytemealAPI.Entity;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,10 +20,23 @@ public class Developer {
   @GeneratedValue(strategy = GenerationType.AUTO)
   private long id;
 
+  @Column(name = "username", nullable = false, unique = true)
+  private String username;
+  @Column(name = "password", nullable = false)
+  private String password;
   private String firstName;
   private String lastName;
-  private String username;
-  
+
+ 
+
+  Developer() {}
+
+  public Developer(String firstName, String lastName,String username, String password) {
+    this.username = username;
+    this.password = password;
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
 
 
    @OneToMany(mappedBy = "buyer")
@@ -32,13 +46,24 @@ public class Developer {
   @JoinColumn(name = "location_id")
   private Location location;
 
+  public String getUserName() {
+    return username;
+  }
+  public void setUserName(String username) {
+    this.username = username;
+  }
+  public String getPassword() {
+    return password;
+  }
+  public void setPassword(String password) {
+    this.password = password;
+  }
   public Location getLocation() {
     return location;
   }
   public void setLocation(Location location) {
     this.location = location;
   }
-
 
   public String getFirstName() {
     return firstName;
@@ -56,11 +81,7 @@ public class Developer {
     this.lastName = lastName;
   }
 
-  public String getUserName() {
-    return username;
-  }
+ 
 
-  public void setUserName(String username) {
-    this.username = username;
-  }
+
 }

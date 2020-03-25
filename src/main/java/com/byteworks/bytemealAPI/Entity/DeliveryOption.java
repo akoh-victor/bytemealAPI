@@ -18,6 +18,15 @@ public class DeliveryOption {
   private String title;
   private String name;
 
+  DeliveryOption() {}
+
+  public DeliveryOption(String name, String title) {
+    this.name = name;
+    this.title = title;
+  }
+
+
+
   @OneToMany(mappedBy = "deliveryOption")
     private List<OrderRequest> orderRequests;
 

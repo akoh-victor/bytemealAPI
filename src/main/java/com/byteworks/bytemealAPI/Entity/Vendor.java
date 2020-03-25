@@ -23,10 +23,14 @@ public class Vendor {
 
   private String name;
   private String phone;
-/*
- Vendor has a one to many relationship with foodMenu
- Vendor has a oneToOne relationship with Location
-*/
+
+
+  Vendor() {}
+
+  public Vendor(String name, String phone) {
+    this.name = name;
+    this.phone = phone;
+  }
 
   @OneToOne
   @JoinColumn(name = "location_id")
@@ -44,6 +48,8 @@ public class Vendor {
     this.location = location;
   }
 
+
+  
 
   public String getName() {
     return name;

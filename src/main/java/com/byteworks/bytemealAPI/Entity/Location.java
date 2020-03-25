@@ -17,6 +17,13 @@ public class Location {
   private double longitude;
   private double latitude;
 
+  Location() {}
+
+  public Location(String address, Double longitude, double  latitude) {
+    this.longitude = longitude;
+    this.latitude = latitude;
+  }
+
   @OneToOne(mappedBy = "location")
   private Vendor vendor;
 

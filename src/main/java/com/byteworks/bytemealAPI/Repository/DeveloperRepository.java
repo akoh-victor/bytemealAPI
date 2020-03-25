@@ -10,6 +10,8 @@ public interface DeveloperRepository extends PagingAndSortingRepository<Develope
 
   List<Developer> findByLastName(String lastName);
 
+  Developer findByUsername(String username);
+
 }
 
 

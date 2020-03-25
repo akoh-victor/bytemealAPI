@@ -1,5 +1,6 @@
 package com.byteworks.bytemealAPI.Entity;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -20,6 +21,23 @@ public class OrderRequest {
 
   private String title;
   private double totalPrice;
+  private Date created;
+
+  OrderRequest(){}
+
+  public Date getCreated() {
+    return created;
+  }
+
+  public void setCreated(Date created) {
+    this.created = created;
+  }
+
+  OrderRequest(String title, Double totalPrice) {
+    this.title = title;
+    this.totalPrice = totalPrice;
+    this.created = new Date();
+  }
 
 
 
@@ -69,7 +87,7 @@ public class OrderRequest {
   public double getTotalPrice() {
     return totalPrice;
   }
-  
+
   public void setTotalPrice(Double totalPrice) {
     this.totalPrice = totalPrice;
   }

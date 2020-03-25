@@ -17,6 +17,13 @@ public class PaymentOption {
 
   private String title;
   private String name;
+  PaymentOption() {}
+
+  public PaymentOption(String title, String name) {
+    this.title = title;
+    this.name = name;
+  }
+
 
   @OneToMany(mappedBy = "paymentOption")
  private List<OrderRequest> orderRequests;

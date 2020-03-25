@@ -1,13 +1,16 @@
 package com.byteworks.bytemealAPI.Repository;
 
 
+
 import com.byteworks.bytemealAPI.Entity.Vendor;
-import org.springframework.data.repository.CrudRepository;
+
+import org.springframework.data.repository.PagingAndSortingRepository;
 
 
 
-public interface VendorRepository extends CrudRepository<Vendor, Long> {
-
+public interface VendorRepository extends PagingAndSortingRepository<Vendor, Long> {
+    
+   Vendor findByPhone(String phone);
  
 }
 
