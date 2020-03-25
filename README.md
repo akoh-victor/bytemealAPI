@@ -1,5 +1,5 @@
 # bytemealAPI
-A RESTFUL API that allow developers to order for food from a vendor, . The core functionalities of this API are 
+bytemealAPI API help developers order food from their favorite vendor. The core functionalities of this API are 
 1 Register as a developer.
 2 Login
 3 Orderfood
@@ -7,7 +7,7 @@ A RESTFUL API that allow developers to order for food from a vendor, . The core 
 
 
 
-# Sample REST CRUD API with Spring Boot, Mysql, JPA and Hibernate 
+# Built with Spring framework  Spring Boot 2.2.5.RELEAS  and Java 
 
 ##  Setup instructions
 
@@ -20,15 +20,14 @@ https://github.com/ideal-it-solutions/bytemealAPI.git
 **2. Requirements**
 
 ```bash
-Your are required to have setep your java development environment.
+Your are required to setep your java development environment.
 if you have not, follow this link  https://www.oracle.com/java/technologies/getstarted-setup-java-programming.html for installation details.
 ```
 
 **3. Build and run the app using maven**
  Run the app without packaging -
 
-```bash
- 
+```bash 
  ./mvnw spring-boot:run
 
 ```
@@ -52,7 +51,6 @@ The app will start running at <http://localhost:8080>.
 
 ## Explore Rest APIs
 
-The app defines following CRUD APIs.
 
     POST /api/v1/order/create
     
