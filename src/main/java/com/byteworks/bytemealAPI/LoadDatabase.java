@@ -39,15 +39,7 @@ class LoadDatabase {
         deliveryOptionRepo.save(new DeliveryOption("Office  delivery","office_delivery"));
         deliveryOptionRepo.save(new DeliveryOption("Self pickup","self_pickup"));
 
-     //create relationship
-    // Vendor seller = vendorRepo.findByPhone("08081477456");
-     //Location first_location = locationRepo.findById(foodOne);
-     //FoodMenu menu =  foodMenuRepo.findByTitle("hdhdh");
-
-     // FoodMenu menu =  foodMenuRepo.findByTitle("Fried Rice and stew");
-
-     //seller.setLocation(first_location);
-    // seller.set
+    
 
   
     };

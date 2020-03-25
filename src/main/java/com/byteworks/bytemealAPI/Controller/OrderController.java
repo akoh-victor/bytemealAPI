@@ -99,9 +99,10 @@ class OrderController {
      
       e.printStackTrace();
      }
+     return newOrderRequest;
 
    
-    return repository.save(newOrderRequest);
+  
 
 
   }

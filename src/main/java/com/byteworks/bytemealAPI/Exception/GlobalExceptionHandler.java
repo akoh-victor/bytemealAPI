@@ -15,13 +15,7 @@ import java.util.Date;
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
-  /**
-   * Resource not found exception response entity.
-   *
-   * @param ex the ex
-   * @param request the request
-   * @return the response entity
-   */
+
   @ExceptionHandler(ResourceNotFoundException.class)
   public ResponseEntity<?> resourceNotFoundException(
       ResourceNotFoundException ex, WebRequest request) {
@@ -30,13 +24,7 @@ public class GlobalExceptionHandler {
     return new ResponseEntity<>(errorDetails, HttpStatus.NOT_FOUND);
   }
 
-  /**
-   * Globle excpetion handler response entity.
-   *
-   * @param ex the ex
-   * @param request the request
-   * @return the response entity
-   */
+ 
   @ExceptionHandler(Exception.class)
   public ResponseEntity<?> globleExcpetionHandler(Exception ex, WebRequest request) {
     ErrorResponse errorDetails =

@@ -29,15 +29,6 @@ public class Developer {
 
  
 
-  Developer() {}
-
-  public Developer(String firstName, String lastName,String username, String password) {
-    this.username = username;
-    this.password = password;
-    this.firstName = firstName;
-    this.lastName = lastName;
-  }
-
 
    @OneToMany(mappedBy = "buyer")
    private List<OrderRequest> orderRequests;
@@ -46,10 +37,10 @@ public class Developer {
   @JoinColumn(name = "location_id")
   private Location location;
 
-  public String getUserName() {
+  public String getUsername() {
     return username;
   }
-  public void setUserName(String username) {
+  public void setUsername(String username) {
     this.username = username;
   }
   public String getPassword() {

@@ -3,9 +3,14 @@ package com.byteworks.bytemealAPI.Controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 import com.byteworks.bytemealAPI.Entity.Developer;
@@ -22,10 +27,13 @@ public class UserController {
 
   private BCryptPasswordEncoder bCryptPasswordEncoder;
 
+  
+
   public UserController(DeveloperRepository userRepository,
   BCryptPasswordEncoder bCryptPasswordEncoder) {
 this.userRepository = userRepository;
 this.bCryptPasswordEncoder = bCryptPasswordEncoder;
+
 }
 
 
@@ -59,6 +67,15 @@ this.bCryptPasswordEncoder = bCryptPasswordEncoder;
   }
 
 
+  @PostMapping("/developer/login")
+  public UsernamePasswordAuthenticationToken getToken(@RequestBody Developer user, HttpServletResponse response) {
 
+  UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword() ,new ArrayList<>());
+
+ 
+  return authToken ;
+
+
+  }
  
 }
