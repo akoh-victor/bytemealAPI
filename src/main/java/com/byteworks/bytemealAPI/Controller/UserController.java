@@ -1,25 +1,22 @@
 package com.byteworks.bytemealAPI.Controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.rest.webmvc.ResourceNotFoundException;
-import org.springframework.http.ResponseEntity;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-
-import javax.servlet.http.HttpServletResponse;
-import javax.validation.Valid;
 
 import com.byteworks.bytemealAPI.Entity.Developer;
+import com.byteworks.bytemealAPI.Exception.ResourceNotFoundException;
 import com.byteworks.bytemealAPI.Repository.DeveloperRepository;
 
-
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/v1")
+
 public class UserController {
 
   @Autowired
@@ -44,7 +41,7 @@ this.bCryptPasswordEncoder = bCryptPasswordEncoder;
    * @return the user
    */
   @PostMapping("/developer/register")
-  public Developer createUser(@Valid @RequestBody Developer user) {
+  public Developer signUp(@RequestBody Developer user) {
     user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
     return userRepository.save(user);
   }
@@ -67,15 +64,5 @@ this.bCryptPasswordEncoder = bCryptPasswordEncoder;
   }
 
 
-  @PostMapping("/developer/login")
-  public UsernamePasswordAuthenticationToken getToken(@RequestBody Developer user, HttpServletResponse response) {
-
-  UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword() ,new ArrayList<>());
-
- 
-  return authToken ;
-
-
-  }
  
 }

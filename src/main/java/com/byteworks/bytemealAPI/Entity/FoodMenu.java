@@ -11,8 +11,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
+
+
+
 
 
 @Entity
@@ -22,9 +23,9 @@ public class FoodMenu {
   @GeneratedValue(strategy = GenerationType.AUTO)
   private long id;
 
-  @NotNull(message = "Please enter a title")
+
   private String title;
-  @Min(message = "Price cannot be negative", value = 0)
+
   private Integer price;
 
   protected FoodMenu() {}

@@ -7,7 +7,7 @@ bytemealAPI API help developers order food from their favorite vendor. The core 
 
 
 
-# Built with Spring framework  Spring Boot 2.2.5.RELEAS  and Java 
+# Built with Spring framework  Spring Boot 2.3.0.M3  and Java 
 
 ##  Setup instructions
 
@@ -49,17 +49,28 @@ The app will start running at <http://localhost:8080>.
 ## Explore Rest APIs
 
 
-    POST /api/v1/order/create
+    POST /order/create
     
-    POST /api/v1/developer/register
+    POST /developer/register
+
+    POST /login
    
     POST /foodMenus
 
     POST /locations
+
+    POST /login
     
-    PUT /deliveryOptions
+    POST /deliveryOptions
     
     DELETE /paymentOptions
 
+    GET order/vendor/pending/{vendor_id}
+
+    GET order/vendor/completed/{vendor_id}
+
+    GET order/vendor/paymentOption/{vendor_id}/{payment_id}
+
+    GET order/vendor/deliveryOption/{vendor_id}/{delivery_id}
 
 

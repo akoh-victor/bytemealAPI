@@ -39,6 +39,9 @@ public class Vendor {
   @OneToMany(mappedBy = "vendor")
   private List<FoodMenu> menu;
   
+  
+  @OneToMany(mappedBy = "vendor")
+  private List<OrderRequest> orderRequests;
 
 
   public Location getLocation() {

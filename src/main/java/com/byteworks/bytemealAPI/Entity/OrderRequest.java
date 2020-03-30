@@ -22,8 +22,27 @@ public class OrderRequest {
   private String title;
   private double totalPrice;
   private Date created;
+  private boolean pending;
+  private boolean completed;
 
-  OrderRequest(){}
+  OrderRequest() {
+  }
+
+  public boolean isPending() {
+    return pending;
+  }
+
+  public void setPending(boolean pending) {
+    this.pending = pending;
+  }
+
+  public boolean isCompleted() {
+    return completed;
+  }
+
+  public void setCompleted(boolean completed) {
+    this.completed = completed;
+  }
 
   public Date getCreated() {
     return created;
@@ -37,6 +56,8 @@ public class OrderRequest {
     this.title = title;
     this.totalPrice = totalPrice;
     this.created = new Date();
+    this.pending = true;
+    this.completed = false;
   }
 
 
@@ -54,7 +75,18 @@ public class OrderRequest {
   @JoinColumn(name = "delivery_id")
   private DeliveryOption deliveryOption;
 
+  @ManyToOne
+  @JoinColumn(name = "vendor_id")
+  private Vendor vendor;
 
+
+
+  public Vendor getVendor() {
+    return vendor;
+  }
+  public void setVendor(Vendor vendor) {
+    this.vendor = vendor;
+  }
 
   public Developer getBuyer() {
     return buyer;
